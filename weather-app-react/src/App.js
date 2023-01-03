@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import WeatherData from './components/WeatherData';
+import WeatherForecast from './components/WeatherForecst';
 
 function App() {
+  const WeatherApp = WeatherData.map ((weather, index) => {
+    return (
+      <WeatherForecast {...weather} key = { index }/>
+    )
+  })
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1> Richards WeatherIcons App </h1>
+      <section> { WeatherApp } </section>
+      <body>{ WeatherApp }</body>
+
     </div>
   );
 }
